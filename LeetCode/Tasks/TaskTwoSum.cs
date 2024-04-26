@@ -1,53 +1,24 @@
-// ReSharper disable once IdentifierTypo
 namespace LeetCode.Tasks
 {
 	public class TaskTwoSum
 	{
-		private int _target;
-		private int[] _nums;
-
-		public int[] TwoSum(int[] nums, int target)
+		public int[]? TwoSum(int[] nums, int target)
 		{
-			_target = target;
-			
-			_nums = nums;
-			
-			return GetSumIndices();
-		}
+			var dict = new Dictionary<int, int>();
 
-		private int[] GetSumIndices()
-		{
-			for (int i = 0; i < _nums.Length; i++)
+			for (int i = 0; i < nums.Length; i++)
 			{
-				var targetNum = _target - _nums[i];
-				
-				if (TryGetIndexTarget(targetNum, out var index, i))
+				var num = target - nums[i];
+
+				if (dict.TryGetValue(num, out var value))
 				{
-					if (index != i)
-					{
-						return [index, i];
-					}
+					return [value, i];
 				}
+
+				dict[nums[i]] = i;
 			}
-			
+
 			return null;
-		}
-
-		private bool TryGetIndexTarget(int target, out int targetIndex, int currentIndex)
-		{
-			for (int i = currentIndex + 1; i < _nums.Length; i++)
-			{
-				if (_nums[i].Equals(target))
-				{
-					targetIndex = i;
-
-					return true;
-				}
-			}
-
-			targetIndex = -1;
-
-			return false;
 		}
 	}
 }
