@@ -1,6 +1,4 @@
-using LeetCode.Tasks;
-
-namespace LeetCode
+namespace TwoSum
 {
 	public static class DebugTask
 	{

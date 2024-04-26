@@ -1,4 +1,4 @@
-namespace LeetCode.Tasks
+namespace TwoSum
 {
 	public class TaskTwoSum
 	{

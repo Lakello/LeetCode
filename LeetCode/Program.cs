@@ -1,3 +1,2 @@
-﻿using LeetCode;
-
-DebugTask.Run();
+﻿
+AddTwoNumbers.DebugTask.Run();
